@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 // import { featuredProducts } from './../data';
 import { ProductType } from "@/types/types";
+import { baseUrl } from "@/utils/utils";
 
 const getData = async ()=>{
   const res = await fetch(`${baseUrl}/api/products`,{

@@ -5,6 +5,7 @@ import { loadStripe } from '@stripe/stripe-js'
 import React, { useEffect, useState } from 'react'
 import { StripeElementsOptions } from '@stripe/stripe-js';
 import CheckoutForm from '@/components/CheckoutForm';
+import { baseUrl } from '@/utils/utils';
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!)
 

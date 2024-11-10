@@ -7,6 +7,7 @@ import DeleteButton from "@/components/DeleteButton";
 import Image from "next/image";
 import React from "react";
 import { ProductType } from "@/types/types";
+import { baseUrl } from "@/utils/utils";
 
 const getData = async (id:string)=>{
   const res = await fetch(`${baseUrl}/api/products/${id}`,{

@@ -3,6 +3,7 @@
 import React, { useEffect } from 'react'
 import { useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
+import { baseUrl } from '@/utils/utils';
 
 const Successpage = () => {
   const searchParams = useSearchParams();

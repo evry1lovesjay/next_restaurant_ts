@@ -7,6 +7,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { OrderType } from "../../types/types";
 import Image from "next/image";
 import { toast } from "react-toastify";
+import { baseUrl } from "@/utils/utils";
 
 const OrdersPage = () => {
 
