@@ -16,10 +16,10 @@ export const useCartStore = create(persist<CartType & ActionTypes>((set, get) =>
     addToCart(item){
 
         const products = get().products
-        const productInState = products.find(product => product.id === item.id)
+        const productInState = products.find(product => product._id === item._id)
 
         if(productInState){
-            const updatedProducts = products.map(product => product.id === productInState.id ?
+            const updatedProducts = products.map(product => product._id === productInState._id ?
                 {
                  ...item,
                  quantity:item.quantity + product.quantity,
@@ -40,7 +40,7 @@ export const useCartStore = create(persist<CartType & ActionTypes>((set, get) =>
     },
     removeFromCart(item){
         set((state) => ({
-            products: state.products.filter((product) => product.id !== item.id),
+            products: state.products.filter((product) => product._id !== item._id),
             totalItems: state.totalItems - item.quantity,
             totalPrice: state.totalPrice - item.price,
         }))

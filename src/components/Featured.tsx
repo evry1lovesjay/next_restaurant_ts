@@ -18,7 +18,7 @@ const getData = async ()=>{
 
 const Featured = async () => {
 
-  const featuredProducts:ProductType = await getData()
+  const featuredProducts:ProductType[] = await getData()
 
   return (
     <div className="w-screen overflow-x-scroll text-red-500">

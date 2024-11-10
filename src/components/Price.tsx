@@ -1,15 +1,15 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { ProductType } from "@types/types";
+import { ProductType } from "@/types/types";
 import {useCartStore} from "@/utils/store"
 import { toast } from "react-toastify";
 
-type Props = {
-  price: number;
-  id: string;
-  options?: { title: string; additionalPrice: number }[];
-};
+// type Props = {
+//   price: number;
+//   id: string;
+//   options?: { title: string; additionalPrice: number }[];
+// };
 
 const Price = ({ product }: {product:ProductType}) => {
   const [total, setTotal] = useState(product.price);
@@ -24,13 +24,13 @@ const Price = ({ product }: {product:ProductType}) => {
 
   useEffect(() => {
     setTotal(
-      quantity * (product.options.length && product.options ? product.price + product.options[selected].additionalPrice : product.price)
+      quantity * (product.options?.length && product.options ? product.price + product.options[selected].additionalPrice : product.price)
     );
   }, [quantity, selected, product]);
 
   const handleCart = ()=>{
     addToCart(
-      { id: product.id,
+      { _id: product._id,
         title: product.title,
         img: product.img,
         price: total,
