@@ -10,11 +10,11 @@ export type MenuType = {
 export type ProductType = {
     _id: string;
     title: string;
-    desc: string;
-    img: string;
+    desc?: string;
+    img?: string;
     price: number;
     options?:{title: string; additionalPrice: number}[]
-}[]
+};
 
 export type OrderType = {
     _id: string;

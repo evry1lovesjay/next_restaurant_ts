@@ -22,7 +22,7 @@ type Props = {
 
 const CategoryPage = async ({params}:Props) => {
 
-  const products:ProductType = await getData(params.category)
+  const products:ProductType[] = await getData(params.category)
   return (
     <div className="flex flex-wrap text-red-500">
       {products.map((item) => (
