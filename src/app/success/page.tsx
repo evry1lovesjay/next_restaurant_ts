@@ -13,7 +13,7 @@ const Successpage = () => {
   useEffect(()=>{
     const makeRequest = async ()=>{
       try{
-        const res = await fetch(`http://localhost:3000/api/confirm/${payment_intent}`, {
+        const res = await fetch(`${baseUrl}/api/confirm/${payment_intent}`, {
           method:"PUT"
         })
         const data = await res.json()

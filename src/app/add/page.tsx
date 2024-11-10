@@ -1,5 +1,6 @@
 "use client";
 
+import { baseUrl } from "@/utils/utils";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -78,12 +79,13 @@ const AddPage = () => {
 //     return resData.url;
 //   };
 
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
     //   const url = await upload();
-      const res = await fetch("http://localhost:3000/api/products", {
+      const res = await fetch(`${baseUrl}/api/products`, {
         method: "POST",
         body: JSON.stringify({
         //   img: url,

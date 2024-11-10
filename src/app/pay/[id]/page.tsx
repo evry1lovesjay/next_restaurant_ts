@@ -18,7 +18,7 @@ const Paypage = ({params}:{params:{id:string}}) => {
     const makeRequest = async () => {
       try {
         const res = await fetch(
-          `http://localhost:3000/api/create-intent/${id}`,
+          `${baseUrl}/api/create-intent/${id}`,
           {
             method: "POST",
           }

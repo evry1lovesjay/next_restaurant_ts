@@ -4,6 +4,7 @@ import Image from "next/image";
 import React, {useEffect} from "react";
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
+import { baseUrl } from "@/utils/utils";
 
 const CartPage = () => {
 
@@ -17,12 +18,13 @@ const CartPage = () => {
     useCartStore.persist.rehydrate()
   },[])
 
+
   const handleCheckout = async () => {
     if (!session) {
       router.push("/login");
     } else {
       try {
-        const res = await fetch("http://localhost:3000/api/orders", {
+        const res = await fetch(`${baseUrl}/api/orders`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
