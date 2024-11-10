@@ -25,7 +25,7 @@ const MenuPage = async() => {
       {menu.map((category) => (
         <Link
           href={`/menu/${category.slug}`}
-          key={category.id}
+          key={category._id}
           className="w-full h-1/3 bg-cover p-8 md:h-1/2"
           style={{ backgroundImage: `url(${category.img})` }}
         >
